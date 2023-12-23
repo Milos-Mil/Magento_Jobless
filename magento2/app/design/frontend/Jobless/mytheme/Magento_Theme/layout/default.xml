@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+<!--        Remove blocks-->
+<!--        <referenceBlock name="authorization-link-login" remove="true" />-->
+        <referenceBlock name="register-link" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
+        <referenceBlock name="footer_links" remove="true"/>
+<!--Header        -->
+        <referenceBlock name="header-wrapper">
+            <container name="header.left" label="headerLeft" htmlTag="div" htmlClass="header-left"/>
+            <container name="header.center" label="headerCenter" htmlTag="div" htmlClass="header-center"/>
+            <container name="header.right" label="headerRight" htmlTag="div" htmlClass="header-right"/>
+        </referenceBlock>
+        <move element="logo" destination="header.left"/>
+        <move element="top.search" destination="header.center"/>
+<!--        Nav Bar-->
+        <referenceContainer name="page.top" label="page_top" htmlTag="div" htmlClass="page-top-row">
+            <container name="page.top.left" label="page_top_left" htmlTag="div" htmlClass="page-top-row-left"/>
+            <container name="page.top.right" label="page_top_right" htmlTag="div" htmlClass="page-top-row-right">
+                <container name="minicart.block" label="minicart_block" htmlTag="div" htmlClass="minicart-block"/>
+                <container name="login.block" label="login_block" htmlTag="div" htmlClass="login-block" before="minicart.block"/>
+            </container>
+        </referenceContainer>
+        <move element="catalog.topnav" destination="page.top.left"/>
+        <move element="minicart" destination="minicart.block" after="minicart_text"/>
+        <move element="authorization-link-login" destination="login.block"/>
+<!--Footer Copyright -->
+        <referenceContainer name="before.body.end" label="footerCopyright" htmlTag="div" htmlClass="footer_copyright"/>
+
+    </body>
+</page>

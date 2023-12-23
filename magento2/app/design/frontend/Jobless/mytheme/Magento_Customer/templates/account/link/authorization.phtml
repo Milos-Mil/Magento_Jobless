@@ -1,0 +1,16 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * @var \Magento\Customer\Block\Account\AuthorizationLink $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+
+<li class="link authorization-link" data-label="<?= $escaper->escapeHtml(__('or')) ?>">
+    <a class="normal-link" <?= /* @noEscape */ $block->getLinkAttributes() ?>>Hello. Sign in</a>
+    <a class="bolded-link" <?= /* @noEscape */ $block->getLinkAttributes() ?>>Your Account</a>
+</li>
