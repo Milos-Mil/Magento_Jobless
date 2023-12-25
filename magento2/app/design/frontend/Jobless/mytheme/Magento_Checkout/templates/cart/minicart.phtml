@@ -6,7 +6,10 @@
 
 /** @var $block \Magento\Checkout\Block\Cart\Sidebar */
 /** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+
 ?>
+
+<!--Problem: Podesi kada je counter qty prazan da prikazuje nulu-->
 
 <div data-block="minicart" class="minicart-wrapper">
     <a class="action showcart" href="<?= $block->escapeUrl($block->getShoppingCartUrl()) ?>"
